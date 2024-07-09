@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Efficient sorting algorithm (e.g., Quick Sort)
+void sort(int arr[], int n) {
+    // Sorting logic here
+}
+
+// Find the maximum element in a sorted list
+int findMax(int arr[], int n) {
+    return arr[n - 1]; // Assuming the list is sorted in ascending order
+}
+
+int main() {
+    int arr[] = {4, 2, 7, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    sort(arr, n);
+
+    int max = findMax(arr, n);
+
+    printf("Maximum element in the sorted list: %d", max);
+
+    return 0;
+}
