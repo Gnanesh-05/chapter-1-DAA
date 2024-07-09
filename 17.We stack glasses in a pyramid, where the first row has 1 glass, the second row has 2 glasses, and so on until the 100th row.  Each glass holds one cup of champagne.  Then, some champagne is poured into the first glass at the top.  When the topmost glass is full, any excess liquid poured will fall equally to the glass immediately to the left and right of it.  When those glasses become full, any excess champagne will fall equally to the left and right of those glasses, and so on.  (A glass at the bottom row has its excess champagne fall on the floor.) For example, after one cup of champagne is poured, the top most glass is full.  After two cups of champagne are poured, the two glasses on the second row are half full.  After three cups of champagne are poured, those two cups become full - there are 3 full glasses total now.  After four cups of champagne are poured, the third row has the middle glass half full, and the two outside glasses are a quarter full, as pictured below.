@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int row = 100;
+    float pyramid[row][row];
+    pyramid[0][0] = 1.0;
+
+    for (int i = 1; i < row; i++) {
+        for (int j = 0; j <= i; j++) {
+            pyramid[i][j] = 0.0;
+            if (pyramid[i - 1][j] > 1.0) {
+                float excess = (pyramid[i - 1][j] - 1.0) / 2.0;
+                pyramid[i][j] += excess;
+                pyramid[i][j + 1] += excess;
+            }
+        }
+    }
+
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j <= i; j++) {
+            printf("%.2f ", pyramid[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
